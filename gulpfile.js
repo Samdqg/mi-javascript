@@ -21,7 +21,6 @@ gulp.task('markdown', function() {
 
 /**
  * Recarga el HTML en el navegador.
- * Creado para quienes no usen Jade.
  */
 gulp.task('html', function () {
   gulp.src('./*.html')
