@@ -1,0 +1,28 @@
+{
+  "name": "mi-javascript",
+  "version": "1.0.0",
+  "description": "Series de tutoriales javascript",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raul0115/mi-javascript.git"
+  },
+  "keywords": [
+    "Javascript",
+    "Web",
+    "Tutoriales"
+  ],
+  "author": "Raul Romero",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/raul0115/mi-javascript/issues"
+  },
+  "homepage": "https://github.com/raul0115/mi-javascript#readme",
+  "devDependencies": {
+    "gulp": "^3.9.0",
+    "gulp-markdown": "^1.2.0"
+  }
+}
