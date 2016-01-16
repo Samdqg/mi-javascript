@@ -17,5 +17,40 @@ Ejemplo:
     <a href="/" id="logo">...</a>
     </div>
  
+ 
+ **getElementsByTagName()**: Éste elemento selecciona todos los elementos que tengan una determinada etiqueta (a, p, div, h1,span, ..).
+    
+    var parrafos = document.getElementsByTagName("p");
+ 
+ El valor que devuelve la función es un array con todos los nodos que cumplen la condición de que su etiqueta coincide con el parámetro proporcionado. El valor devuelto es un array de nodos DOM, no un array de cadenas de texto o un array de objetos normales. Por lo tanto, se debe procesar cada valor del array de la forma que se muestra en las siguientes secciones.
+ 
+ De este modo, se puede obtener el primer párrafo de la página de la siguiente manera:
+    
+    var primerParrafo = parrafos[0];
+
+De la misma forma, se podrían recorrer todos los párrafos de la página con el siguiente código:
+
+    for(var i=0; i<parrafos.length; i++) {
+    var parrafo = parrafos[i];
+    }
+
+La función getElementsByTagName() se puede aplicar de forma recursiva sobre cada uno de los nodos devueltos por la función. En el siguiente ejemplo, se obtienen todos los enlaces del primer párrafo de la página:
+
+    var parrafos = document.getElementsByTagName("p");
+    var primerParrafo = parrafos[0];
+    var enlaces = primerParrafo.getElementsByTagName("a");
+
+**getElementsByName()**: es similar a getElementsByTagName(), pero en este caso se buscan los elementos cuyo atributo name sea igual al parámetro proporcionado. En el siguiente ejemplo, se obtiene directamente el único párrafo con el nombre indicado:
+
+    var parrafoEspecial = document.getElementsByName("especial");
+    <p name="especial">...</p>
+    <p name="prueba">...</p>
+    
+Normalmente el atributo name es único para los elementos HTML que lo definen, por lo que es un método muy práctico para acceder directamente al nodo deseado. En el caso de los elementos HTML radiobutton, el atributo name es común a todos los radiobutton que están relacionados, por lo que la función devuelve una colección de elementos.
+
+**getElementsByClassName()**: El uso es similar a getElementsByTagName, sólo que en vez de devolver elementos según una etiqueta, los devuelve según la clase del elemento. Ejemplo:
+
+    var miclase= document.getElementsByClassName('miclase');<p class="cualquier-clase">...</p>
+    <p name="miclase">...</p> 
 
 
