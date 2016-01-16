@@ -22,10 +22,12 @@ gulp.task('markdown', function() {
         }));
 });
 /**
+ * 
  * Compila los archivos sass hijos directos de la carpeta `scss/`.
  * Agrega los prefijos propietarios de los navegadores.
  * Los archivos CSS generados se guardan en la carpeta `css/`.
  */
+
 gulp.task('sass', function () {
   var processors = [
     autoprefixer({ browsers: ['last 2 versions'] })
@@ -38,6 +40,8 @@ gulp.task('sass', function () {
     .pipe(gulp.dest('./taller/css'))
     .pipe(connect.reload());
 });
+
+
 
 /**
  * Recarga el HTML en el navegador.
@@ -72,9 +76,8 @@ gulp.task('watch:markdown', ['markdown'], function () {
  * los archivos Sass de la carpeta `scss/` y subcarpetas.
  */
 gulp.task('watch:sass', ['connect', 'sass'], function () {
-  gulp.watch('./taller/scss/**/*.scss', ['sass']);
+  gulp.watch('./taller/scss/**/*.scss', ['sass']); 
 });
-
 
 /**
  * Ejecuta las tareas connect y html, queda escuchando los cambios de todos
