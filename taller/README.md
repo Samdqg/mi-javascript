@@ -6,7 +6,7 @@ DOM proporciona dos métodos alternativos para acceder a un nodo específico: ac
 
 Las funciones que proporciona DOM para acceder a un nodo a través de sus nodos padre consisten en acceder al nodo raíz de la página y después a sus nodos hijos y a los nodos hijos de esos hijos y así sucesivamente hasta el último nodo de la rama terminada por el nodo buscado. Sin embargo, cuando se quiere acceder a un nodo específico, es mucho más rápido acceder directamente a ese nodo y no llegar hasta él descendiendo a través de todos sus nodos padre.
 
-##Selectores directos-->>
+## **Selectores directos**##
 
 **getElementById()**: Como su nombre indica, sirve para seleccionar un elemento por su ID.Como el atributo id debe ser único para cada elemento de una misma página, la función devuelve únicamente el nodo deseado.
 
@@ -51,6 +51,69 @@ Normalmente el atributo name es único para los elementos HTML que lo definen, p
 **getElementsByClassName()**: El uso es similar a getElementsByTagName, sólo que en vez de devolver elementos según una etiqueta, los devuelve según la clase del elemento. Ejemplo:
 
     var miclase= document.getElementsByClassName('miclase');<p class="cualquier-clase">...</p>
-    <p name="miclase">...</p> 
+    <p name="miclase">...</p>
+
+
+##** Seleccionar elementos con querySelector de JavaScript **##
+
+De forma nativa nuestro navegador soporta querySelector() y querySelectorAll(), que nos devuelve elementos de nuestra web especificando selectores CSS.
+En la versión simple (querySelector) tras especificar un selector nos devuelve el primer elemento resultante, mientras que la función terminada con "All" nos devuelve un Array con los elementos resultantes. 
+
+**querySelector():** En este caso esta función actúa de forma muy similar a un getElementById(), ya que podemos seleccionar tener varios elementos con una ID pero solo selecciona el primero. 
+Al ser usado como instancia de document hacemos una búsqueda sobre cualquier elemento de la página, pero también puede ser usado como instancia de un elemento del DOM, por ejemplo document.body o cualquier elemento seleccionado con getElementById() o getElementsByTagName().
+
+Ejemplo:
+    
+    <div id="prueba">
+    <span id="id5" class="clase" title="Azul"></span>
+    <span id="id4" class="clase" title="Verde"></span>
+    <span id="id3" class="clase" title="Naranja"></span>
+    <span id="id2" class="clase" title="Lila"></span>
+    <span id="id1" class="clase" title="Rojo"></span>
+    </div>
+    
+    document.getElementById('id1').title // Rojo
+    document.querySelector('#prueba .clase').title // Azu
+    document.querySelector('#prueba #id3.clase').title // Naranj
+    document.querySelector('#prueba .clase + .clase').title // Verde
+    document.querySelector('#prueba .clase[title^=L]').title // Lila
+    
+**querySelectorAll()**:Esta función es similar a un getElementsByTagName, devuelve un conjunto de elementos
+Tiene la ventaja, el querySelectorAll() que nos permite conseguir todos los elementos de una o varias consultas, simplemente separando con comas, como hacemos en CSS.
+
+Ejemplos:
+    
+    <div id="prueba">
+    <span id="id5" class="clase" title="Azul"></span>
+    <span id="id4" class="clase" title="Verde"></span>
+    <span id="id4" class="clase" title="Verde"></span>
+    <span id="id2" class="clase" title="Lila"></span>
+    <span id="id1" class="clase" title="Rojo"></span>
+    </div>
+
+    document.querySelectorAll('#prueba .clase') //Devuelve los 5 elementos
+    document.querySelectorAll('span') // Devueve todoslos span d euna pagina
+    document.querySelectorAll('span, img') //Devuelve Todos los <span> y <img> de una página
+    document.querySelectorAll('div > span')// Devuelve todos los <span> hijos de <div>
+    
+    
+    
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
