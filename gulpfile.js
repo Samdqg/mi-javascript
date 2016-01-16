@@ -82,7 +82,7 @@ gulp.task('watch:sass', ['connect', 'sass'], function () {
  * Creado para quienes no usen Jade.
  */
 gulp.task('watch:html', ['connect', 'html'], function () {
-  gulp.watch('./*.html', ['html']);
+  gulp.watch('./taller/*.html', ['html']);
 });
 
 /**
