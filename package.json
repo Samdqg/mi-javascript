@@ -23,6 +23,7 @@
   "homepage": "https://github.com/raul0115/mi-javascript#readme",
   "devDependencies": {
     "gulp": "^3.9.0",
+    "gulp-connect": "^2.3.1",
     "gulp-markdown": "^1.2.0"
   }
 }
