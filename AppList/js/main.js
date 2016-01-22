@@ -6,13 +6,38 @@
     
     //funciones
     var agregarTarea = function(){
-        alert("Agregar Tarea");
+        var tarea = tareaInput.value,
+            nuevaTarea= document.createElement("li"),
+            enlace = document.createElement("a"),
+            contenido = document.createTextNode(tarea);
+            
+            if(tarea===""){
+                tareaInput.setAttribute("placeholder","Agrega una tarea valida");
+                tareaInput.className= "error";
+                return false;
+            }
+            //agregamos el contenido al enlace
+            enlace.appendChild(contenido);
+            //le agregamos un atributo del tipo href
+            enlace.setAttribute("href","#");
+            
+            // agregamos el enlace ala nueva tarea
+            nuevaTarea.appendChild(enlace);
+            // le agrego el evento
+            nuevaTarea.addEventListener("click",eliminarTarea);
+            //agregamos la nueva tarea a la lista
+            lista.appendChild(nuevaTarea);
+            
+            tareaInput.value="";
+
     };
     var comprobarInput= function(){
-        alert("Comprobar input ");
+        tareaInput.className="";
+        tareaInput.setAttribute("placeholder","Agrega tu tarea");
+
     };
     var eliminarTarea = function(){
-        alert("Eliminar Tarea");
+        this.parentNode.removeChild(this);
     };
     
     //Eventos
