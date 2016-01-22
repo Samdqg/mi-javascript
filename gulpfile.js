@@ -33,11 +33,11 @@ gulp.task('sass', function () {
     autoprefixer({ browsers: ['last 2 versions'] })
   ];
 
-  return gulp.src('./taller/scss/*.scss')
+  return gulp.src('./FormMaterialDesign/scss/*.scss')
     .pipe(sass().on('error', sass.logError))
     .pipe(plumber())
     .pipe(postcss(processors))
-    .pipe(gulp.dest('./taller/css'))
+    .pipe(gulp.dest('./FormMaterialDesign/css'))
     .pipe(connect.reload());
 });
 
@@ -76,7 +76,7 @@ gulp.task('watch:markdown', ['markdown'], function () {
  * los archivos Sass de la carpeta `scss/` y subcarpetas.
  */
 gulp.task('watch:sass', ['connect', 'sass'], function () {
-  gulp.watch('./taller/scss/**/*.scss', ['sass']); 
+  gulp.watch('./FormMaterialDesign/scss/**/*.scss', ['sass']); 
 });
 
 /**
